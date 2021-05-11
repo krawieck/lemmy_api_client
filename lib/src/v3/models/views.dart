@@ -329,6 +329,32 @@ class CommunityModeratorView extends WithInstanceHost
 }
 
 @freezed
+class PersonBlockView extends WithInstanceHost with _$PersonBlockView {
+  @JsonSerializable(fieldRename: FieldRename.snake)
+  factory PersonBlockView({
+    required PersonSafe person,
+    required PersonSafe recipient,
+  }) = _PersonBlockView;
+
+  PersonBlockView._();
+  factory PersonBlockView.fromJson(Map<String, dynamic> json) =>
+      _$PersonBlockViewFromJson(json);
+}
+
+@freezed
+class CommunityBlockView extends WithInstanceHost with _$CommunityBlockView {
+  @JsonSerializable(fieldRename: FieldRename.snake)
+  factory CommunityBlockView({
+    required PersonSafe person,
+    required CommunitySafe community,
+  }) = _CommunityBlockView;
+
+  CommunityBlockView._();
+  factory CommunityBlockView.fromJson(Map<String, dynamic> json) =>
+      _$CommunityBlockViewFromJson(json);
+}
+
+@freezed
 class CommunityPersonBanView extends WithInstanceHost
     with _$CommunityPersonBanView {
   @JsonSerializable(fieldRename: FieldRename.snake)

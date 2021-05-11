@@ -224,6 +224,12 @@ _$_FullPersonView _$_$_FullPersonViewFromJson(Map<String, dynamic> json) {
     follows: (json['follows'] as List<dynamic>)
         .map((e) => CommunityFollowerView.fromJson(e as Map<String, dynamic>))
         .toList(),
+    communityBlocks: (json['community_blocks'] as List<dynamic>)
+        .map((e) => CommunityBlockView.fromJson(e as Map<String, dynamic>))
+        .toList(),
+    personBlocks: (json['person_blocks'] as List<dynamic>)
+        .map((e) => PersonBlockView.fromJson(e as Map<String, dynamic>))
+        .toList(),
     moderates: (json['moderates'] as List<dynamic>)
         .map((e) => CommunityModeratorView.fromJson(e as Map<String, dynamic>))
         .toList(),
@@ -241,6 +247,9 @@ Map<String, dynamic> _$_$_FullPersonViewToJson(_$_FullPersonView instance) =>
       'instance_host': instance.instanceHost,
       'person_view': instance.personView.toJson(),
       'follows': instance.follows.map((e) => e.toJson()).toList(),
+      'community_blocks':
+          instance.communityBlocks.map((e) => e.toJson()).toList(),
+      'person_blocks': instance.personBlocks.map((e) => e.toJson()).toList(),
       'moderates': instance.moderates.map((e) => e.toJson()).toList(),
       'comments': instance.comments.map((e) => e.toJson()).toList(),
       'posts': instance.posts.map((e) => e.toJson()).toList(),
@@ -276,6 +285,21 @@ Map<String, dynamic> _$_$_BannedPersonToJson(_$_BannedPerson instance) =>
       'instance_host': instance.instanceHost,
       'person_view': instance.personView.toJson(),
       'banned': instance.banned,
+    };
+
+_$_BlockedPerson _$_$_BlockedPersonFromJson(Map<String, dynamic> json) {
+  return _$_BlockedPerson(
+    personView:
+        PersonViewSafe.fromJson(json['person_view'] as Map<String, dynamic>),
+    blocked: json['blocked'] as bool,
+  )..instanceHost = json['instance_host'] as String;
+}
+
+Map<String, dynamic> _$_$_BlockedPersonToJson(_$_BlockedPerson instance) =>
+    <String, dynamic>{
+      'instance_host': instance.instanceHost,
+      'person_view': instance.personView.toJson(),
+      'blocked': instance.blocked,
     };
 
 _$_GetReportCountResponse _$_$_GetReportCountResponseFromJson(
