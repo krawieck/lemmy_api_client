@@ -2100,12 +2100,16 @@ class _$FullPersonViewTearOff {
   _FullPersonView call(
       {required PersonViewSafe personView,
       required List<CommunityFollowerView> follows,
+      required List<CommunityBlockView> communityBlocks,
+      required List<PersonBlockView> personBlocks,
       required List<CommunityModeratorView> moderates,
       required List<CommentView> comments,
       required List<PostView> posts}) {
     return _FullPersonView(
       personView: personView,
       follows: follows,
+      communityBlocks: communityBlocks,
+      personBlocks: personBlocks,
       moderates: moderates,
       comments: comments,
       posts: posts,
@@ -2124,6 +2128,9 @@ const $FullPersonView = _$FullPersonViewTearOff();
 mixin _$FullPersonView {
   PersonViewSafe get personView => throw _privateConstructorUsedError;
   List<CommunityFollowerView> get follows => throw _privateConstructorUsedError;
+  List<CommunityBlockView> get communityBlocks =>
+      throw _privateConstructorUsedError;
+  List<PersonBlockView> get personBlocks => throw _privateConstructorUsedError;
   List<CommunityModeratorView> get moderates =>
       throw _privateConstructorUsedError;
   List<CommentView> get comments => throw _privateConstructorUsedError;
@@ -2143,6 +2150,8 @@ abstract class $FullPersonViewCopyWith<$Res> {
   $Res call(
       {PersonViewSafe personView,
       List<CommunityFollowerView> follows,
+      List<CommunityBlockView> communityBlocks,
+      List<PersonBlockView> personBlocks,
       List<CommunityModeratorView> moderates,
       List<CommentView> comments,
       List<PostView> posts});
@@ -2163,6 +2172,8 @@ class _$FullPersonViewCopyWithImpl<$Res>
   $Res call({
     Object? personView = freezed,
     Object? follows = freezed,
+    Object? communityBlocks = freezed,
+    Object? personBlocks = freezed,
     Object? moderates = freezed,
     Object? comments = freezed,
     Object? posts = freezed,
@@ -2176,6 +2187,14 @@ class _$FullPersonViewCopyWithImpl<$Res>
           ? _value.follows
           : follows // ignore: cast_nullable_to_non_nullable
               as List<CommunityFollowerView>,
+      communityBlocks: communityBlocks == freezed
+          ? _value.communityBlocks
+          : communityBlocks // ignore: cast_nullable_to_non_nullable
+              as List<CommunityBlockView>,
+      personBlocks: personBlocks == freezed
+          ? _value.personBlocks
+          : personBlocks // ignore: cast_nullable_to_non_nullable
+              as List<PersonBlockView>,
       moderates: moderates == freezed
           ? _value.moderates
           : moderates // ignore: cast_nullable_to_non_nullable
@@ -2209,6 +2228,8 @@ abstract class _$FullPersonViewCopyWith<$Res>
   $Res call(
       {PersonViewSafe personView,
       List<CommunityFollowerView> follows,
+      List<CommunityBlockView> communityBlocks,
+      List<PersonBlockView> personBlocks,
       List<CommunityModeratorView> moderates,
       List<CommentView> comments,
       List<PostView> posts});
@@ -2232,6 +2253,8 @@ class __$FullPersonViewCopyWithImpl<$Res>
   $Res call({
     Object? personView = freezed,
     Object? follows = freezed,
+    Object? communityBlocks = freezed,
+    Object? personBlocks = freezed,
     Object? moderates = freezed,
     Object? comments = freezed,
     Object? posts = freezed,
@@ -2245,6 +2268,14 @@ class __$FullPersonViewCopyWithImpl<$Res>
           ? _value.follows
           : follows // ignore: cast_nullable_to_non_nullable
               as List<CommunityFollowerView>,
+      communityBlocks: communityBlocks == freezed
+          ? _value.communityBlocks
+          : communityBlocks // ignore: cast_nullable_to_non_nullable
+              as List<CommunityBlockView>,
+      personBlocks: personBlocks == freezed
+          ? _value.personBlocks
+          : personBlocks // ignore: cast_nullable_to_non_nullable
+              as List<PersonBlockView>,
       moderates: moderates == freezed
           ? _value.moderates
           : moderates // ignore: cast_nullable_to_non_nullable
@@ -2268,6 +2299,8 @@ class _$_FullPersonView extends _FullPersonView {
   _$_FullPersonView(
       {required this.personView,
       required this.follows,
+      required this.communityBlocks,
+      required this.personBlocks,
       required this.moderates,
       required this.comments,
       required this.posts})
@@ -2281,6 +2314,10 @@ class _$_FullPersonView extends _FullPersonView {
   @override
   final List<CommunityFollowerView> follows;
   @override
+  final List<CommunityBlockView> communityBlocks;
+  @override
+  final List<PersonBlockView> personBlocks;
+  @override
   final List<CommunityModeratorView> moderates;
   @override
   final List<CommentView> comments;
@@ -2289,7 +2326,7 @@ class _$_FullPersonView extends _FullPersonView {
 
   @override
   String toString() {
-    return 'FullPersonView(personView: $personView, follows: $follows, moderates: $moderates, comments: $comments, posts: $posts)';
+    return 'FullPersonView(personView: $personView, follows: $follows, communityBlocks: $communityBlocks, personBlocks: $personBlocks, moderates: $moderates, comments: $comments, posts: $posts)';
   }
 
   @override
@@ -2302,6 +2339,12 @@ class _$_FullPersonView extends _FullPersonView {
             (identical(other.follows, follows) ||
                 const DeepCollectionEquality()
                     .equals(other.follows, follows)) &&
+            (identical(other.communityBlocks, communityBlocks) ||
+                const DeepCollectionEquality()
+                    .equals(other.communityBlocks, communityBlocks)) &&
+            (identical(other.personBlocks, personBlocks) ||
+                const DeepCollectionEquality()
+                    .equals(other.personBlocks, personBlocks)) &&
             (identical(other.moderates, moderates) ||
                 const DeepCollectionEquality()
                     .equals(other.moderates, moderates)) &&
@@ -2317,6 +2360,8 @@ class _$_FullPersonView extends _FullPersonView {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(personView) ^
       const DeepCollectionEquality().hash(follows) ^
+      const DeepCollectionEquality().hash(communityBlocks) ^
+      const DeepCollectionEquality().hash(personBlocks) ^
       const DeepCollectionEquality().hash(moderates) ^
       const DeepCollectionEquality().hash(comments) ^
       const DeepCollectionEquality().hash(posts);
@@ -2336,6 +2381,8 @@ abstract class _FullPersonView extends FullPersonView {
   factory _FullPersonView(
       {required PersonViewSafe personView,
       required List<CommunityFollowerView> follows,
+      required List<CommunityBlockView> communityBlocks,
+      required List<PersonBlockView> personBlocks,
       required List<CommunityModeratorView> moderates,
       required List<CommentView> comments,
       required List<PostView> posts}) = _$_FullPersonView;
@@ -2348,6 +2395,11 @@ abstract class _FullPersonView extends FullPersonView {
   PersonViewSafe get personView => throw _privateConstructorUsedError;
   @override
   List<CommunityFollowerView> get follows => throw _privateConstructorUsedError;
+  @override
+  List<CommunityBlockView> get communityBlocks =>
+      throw _privateConstructorUsedError;
+  @override
+  List<PersonBlockView> get personBlocks => throw _privateConstructorUsedError;
   @override
   List<CommunityModeratorView> get moderates =>
       throw _privateConstructorUsedError;
@@ -2732,6 +2784,194 @@ abstract class _BannedPerson extends BannedPerson {
   @override
   @JsonKey(ignore: true)
   _$BannedPersonCopyWith<_BannedPerson> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+BlockedPerson _$BlockedPersonFromJson(Map<String, dynamic> json) {
+  return _BlockedPerson.fromJson(json);
+}
+
+/// @nodoc
+class _$BlockedPersonTearOff {
+  const _$BlockedPersonTearOff();
+
+  _BlockedPerson call(
+      {required PersonViewSafe personView, required bool blocked}) {
+    return _BlockedPerson(
+      personView: personView,
+      blocked: blocked,
+    );
+  }
+
+  BlockedPerson fromJson(Map<String, Object> json) {
+    return BlockedPerson.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $BlockedPerson = _$BlockedPersonTearOff();
+
+/// @nodoc
+mixin _$BlockedPerson {
+  PersonViewSafe get personView => throw _privateConstructorUsedError;
+  bool get blocked => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $BlockedPersonCopyWith<BlockedPerson> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BlockedPersonCopyWith<$Res> {
+  factory $BlockedPersonCopyWith(
+          BlockedPerson value, $Res Function(BlockedPerson) then) =
+      _$BlockedPersonCopyWithImpl<$Res>;
+  $Res call({PersonViewSafe personView, bool blocked});
+
+  $PersonViewSafeCopyWith<$Res> get personView;
+}
+
+/// @nodoc
+class _$BlockedPersonCopyWithImpl<$Res>
+    implements $BlockedPersonCopyWith<$Res> {
+  _$BlockedPersonCopyWithImpl(this._value, this._then);
+
+  final BlockedPerson _value;
+  // ignore: unused_field
+  final $Res Function(BlockedPerson) _then;
+
+  @override
+  $Res call({
+    Object? personView = freezed,
+    Object? blocked = freezed,
+  }) {
+    return _then(_value.copyWith(
+      personView: personView == freezed
+          ? _value.personView
+          : personView // ignore: cast_nullable_to_non_nullable
+              as PersonViewSafe,
+      blocked: blocked == freezed
+          ? _value.blocked
+          : blocked // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+
+  @override
+  $PersonViewSafeCopyWith<$Res> get personView {
+    return $PersonViewSafeCopyWith<$Res>(_value.personView, (value) {
+      return _then(_value.copyWith(personView: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$BlockedPersonCopyWith<$Res>
+    implements $BlockedPersonCopyWith<$Res> {
+  factory _$BlockedPersonCopyWith(
+          _BlockedPerson value, $Res Function(_BlockedPerson) then) =
+      __$BlockedPersonCopyWithImpl<$Res>;
+  @override
+  $Res call({PersonViewSafe personView, bool blocked});
+
+  @override
+  $PersonViewSafeCopyWith<$Res> get personView;
+}
+
+/// @nodoc
+class __$BlockedPersonCopyWithImpl<$Res>
+    extends _$BlockedPersonCopyWithImpl<$Res>
+    implements _$BlockedPersonCopyWith<$Res> {
+  __$BlockedPersonCopyWithImpl(
+      _BlockedPerson _value, $Res Function(_BlockedPerson) _then)
+      : super(_value, (v) => _then(v as _BlockedPerson));
+
+  @override
+  _BlockedPerson get _value => super._value as _BlockedPerson;
+
+  @override
+  $Res call({
+    Object? personView = freezed,
+    Object? blocked = freezed,
+  }) {
+    return _then(_BlockedPerson(
+      personView: personView == freezed
+          ? _value.personView
+          : personView // ignore: cast_nullable_to_non_nullable
+              as PersonViewSafe,
+      blocked: blocked == freezed
+          ? _value.blocked
+          : blocked // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+@JsonSerializable(fieldRename: FieldRename.snake)
+
+/// @nodoc
+class _$_BlockedPerson extends _BlockedPerson {
+  _$_BlockedPerson({required this.personView, required this.blocked})
+      : super._();
+
+  factory _$_BlockedPerson.fromJson(Map<String, dynamic> json) =>
+      _$_$_BlockedPersonFromJson(json);
+
+  @override
+  final PersonViewSafe personView;
+  @override
+  final bool blocked;
+
+  @override
+  String toString() {
+    return 'BlockedPerson(personView: $personView, blocked: $blocked)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _BlockedPerson &&
+            (identical(other.personView, personView) ||
+                const DeepCollectionEquality()
+                    .equals(other.personView, personView)) &&
+            (identical(other.blocked, blocked) ||
+                const DeepCollectionEquality().equals(other.blocked, blocked)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(personView) ^
+      const DeepCollectionEquality().hash(blocked);
+
+  @JsonKey(ignore: true)
+  @override
+  _$BlockedPersonCopyWith<_BlockedPerson> get copyWith =>
+      __$BlockedPersonCopyWithImpl<_BlockedPerson>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_BlockedPersonToJson(this);
+  }
+}
+
+abstract class _BlockedPerson extends BlockedPerson {
+  factory _BlockedPerson(
+      {required PersonViewSafe personView,
+      required bool blocked}) = _$_BlockedPerson;
+  _BlockedPerson._() : super._();
+
+  factory _BlockedPerson.fromJson(Map<String, dynamic> json) =
+      _$_BlockedPerson.fromJson;
+
+  @override
+  PersonViewSafe get personView => throw _privateConstructorUsedError;
+  @override
+  bool get blocked => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$BlockedPersonCopyWith<_BlockedPerson> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

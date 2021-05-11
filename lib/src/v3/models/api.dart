@@ -147,6 +147,8 @@ class FullPersonView extends WithInstanceHost with _$FullPersonView {
   factory FullPersonView({
     required PersonViewSafe personView,
     required List<CommunityFollowerView> follows,
+    required List<CommunityBlockView> communityBlocks,
+    required List<PersonBlockView> personBlocks,
     required List<CommunityModeratorView> moderates,
     required List<CommentView> comments,
     required List<PostView> posts,
@@ -182,6 +184,19 @@ class BannedPerson extends WithInstanceHost with _$BannedPerson {
   BannedPerson._();
   factory BannedPerson.fromJson(Map<String, dynamic> json) =>
       _$BannedPersonFromJson(json);
+}
+
+@freezed
+class BlockedPerson extends WithInstanceHost with _$BlockedPerson {
+  @JsonSerializable(fieldRename: FieldRename.snake)
+  factory BlockedPerson({
+    required PersonViewSafe personView,
+    required bool blocked,
+  }) = _BlockedPerson;
+
+  BlockedPerson._();
+  factory BlockedPerson.fromJson(Map<String, dynamic> json) =>
+      _$BlockedPersonFromJson(json);
 }
 
 // TODO: this does not seem to exist yet
